@@ -1,11 +1,17 @@
 import React from "react";
 
+import "./App.css"
+
+import Navbar from "./components/Navbar"
+import Textarea from "./components/Textarea";
+
 export default function App () {
   
 
   return(
-    <div>
-      <h1>APP</h1>
-    </div>
+    <main>
+      <Navbar/>
+      <Textarea/>
+    </main>
   )
 }

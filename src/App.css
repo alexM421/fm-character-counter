@@ -1,0 +1,138 @@
+/*Font*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    /* Neutral */
+    --neutral-900: #12131a;
+    --neutral-800: #21222c;
+    --neutral-700: #2a2837;
+    --neutral-600: #404254;
+    --neutral-200: #e4e4ef;
+    --neutral-100: #f2f2f7;
+    --neutral-0: #ffffff;
+  
+    /* Purple */
+    --blue-400: #d3adfa;
+    --blue-500: #ac72fc;
+  
+    /* Yellow */
+    --yellow-500: #ffbf00;
+  
+    /* Orange */
+    --orange-500: #fea189;
+    --orange-800: #da3701;
+  }
+  
+
+  .text-preset-1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+  
+  .text-preset-1-mobile {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+  
+  .text-preset-2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600; /* SemiBold */
+    line-height: 130%;
+    letter-spacing: -1px;
+  }
+  
+  .text-preset-3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    line-height: 140%;
+    letter-spacing: -0.6px;
+  }
+  
+  .text-preset-4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    line-height: 130%;
+    letter-spacing: -0.6px;
+  }
+
+
+/*DarkMode*/
+
+/* TEMPORARTY -- TODO Implement class system for DarkMode */
+
+body{
+  background-color: var(--neutral-900);
+  color: var(--neutral-200);
+}
+
+/* Main */
+
+*{
+  box-sizing: border-box;
+}
+
+main{
+    width: 80%;
+    max-width: 1200px;
+    min-width: 375px;
+    margin: auto;
+    margin-block: 2rem;
+}
+
+/* Navbar */
+
+nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-darkMode-icon{
+  background-color: var(--neutral-700);
+  width: 44px;
+  height: 44px;
+  padding: 13px;
+  border-radius: 8px;
+}
+
+/* Textarea */
+
+
+
+
+.textarea h1{
+  color: var(--neutral-100);
+  margin: 3rem 0;
+  text-align: center;
+}
+
+textarea{
+  background-color: var(--neutral-800);
+  border: 2px solid var(--neutral-700);
+  color: var(--neutral-200);
+  margin-block: 1rem;
+  border-radius: 12px;
+  resize: none;
+  width: 100%;
+  height: 200px;
+  padding: 1.25rem 0 0 1.25rem;
+}
+
+textarea::placeholder{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  line-height: 140%;
+  letter-spacing: -0.6px;
+  color: var(--neutral-200)
+}
