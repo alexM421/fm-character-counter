@@ -13,14 +13,14 @@
     --neutral-0: #ffffff;
   
     /* Purple */
-    --blue-400: #d3adfa;
+    --blue-400: #D3A0FA;
     --blue-500: #ac72fc;
   
     /* Yellow */
-    --yellow-500: #ffbf00;
+    --yellow-500: #FF9F00;
   
     /* Orange */
-    --orange-500: #fea189;
+    --orange-500: #FE8159;
     --orange-800: #da3701;
   }
   
@@ -71,8 +71,36 @@
 /* TEMPORARTY -- TODO Implement class system for DarkMode */
 
 body{
-  background-color: var(--neutral-900);
-  color: var(--neutral-200);
+  transition: all 0.5s ease;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.darkModeOn{
+  --background-color: var(--neutral-900);
+  --text-color: var(--neutral-200);
+  --header-color: var(--neutral-100);
+  --textarea-bgColor: var(--neutral-800);
+  --textarea-bgColorHover: var(--neutral-700);
+  --textarea-borderColor: var(--neutral-700);
+  --textarea-borderColorHover: var(--neutral-600);
+  --chart-color: var(--neutral-800);
+  --checkboxes-borderColor: var(--neutral-200);
+  --highlight-color: var(--orange-500);
+
+}
+
+.darkModeOff{
+  --background-color: white;
+  --text-color: var(--neutral-700);
+  --header-color: var((#12131A))
+  --textarea-bgColor: var(--neutral-100);
+  --textarea-bgColorHover: var(--neutral-200);
+  --textarea-borderColor: var(--neutral-200);
+  --textarea-borderColorHover: var(--neutral-200);
+  --chart-color: var(--neutral-100);
+  --checkboxes-borderColor: var(--neutral-600);
+  --highlight-color: var(--orange-800);
 }
 
 /* Main */
@@ -105,21 +133,25 @@ align-items: center;
   border-radius: 8px;
 }
 
+.nav-darkMode-icon:hover{
+  cursor: pointer;
+}
+
 /* Textarea */
 
 
 
 
 .textarea h1{
-  color: var(--neutral-100);
+  color: var(--header-color);
   margin: 3rem 0;
   text-align: center;
 }
 
 textarea{
-  background-color: var(--neutral-800);
-  border: 2px solid var(--neutral-700);
-  color: var(--neutral-200);
+  background-color: var(--textarea-bgColor);
+  border: 2px solid var(--textarea-borderColor);
+  color: var(--text-color);
   margin-block: 1rem;
   border-radius: 12px;
   resize: none;
@@ -128,11 +160,209 @@ textarea{
   padding: 1.25rem 0 0 1.25rem;
 }
 
+
+textarea:hover{
+  background-color: var(--textarea-bgColorHover);
+  border: 2px solid var(--textarea-borderColorHover);
+  cursor: pointer;
+}
+
+textarea:focus{
+  background-color: var(--textarea-bgColor);
+  border: 2px solid var(--blue-500);
+  outline: none;
+  box-shadow: 0 0 10px var(--blue-400);
+}
+.highlight {
+  border: 2px solid var(--highlight-color);
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+.highlight:focus {
+  border: 2px solid var(--highlight-color);
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.overLimitText{
+  display: flex;
+  align-items: center;
+  color: var(--highlight-color);
+  margin-bottom:  16px ;
+}
+
+.overLimitText p{
+  margin: 0;
+}
+
+
+
 textarea::placeholder{
   font-family: 'DM Sans', sans-serif;
   font-size: 20px;
   font-weight: 400; /* Regular */
   line-height: 140%;
   letter-spacing: -0.6px;
+  color: var(--text-color)
+}
+
+.textarea-under{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.textarea-under p{
+  margin: 0;
+}
+
+.checkboxes{
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem; 
+}
+
+.checkboxes div{
+  display: flex;
+  gap: 10px;
+}
+
+.char-limit{
+  background-color: transparent;
+  color: var(--text-color);
+  text-align: center;
+  border: 1px solid var(--neutral-600);
+  border-radius: 6px;
+  width: 55px;
+  height: 29px;
+}
+
+.char-limit::placeholder{
   color: var(--neutral-200)
+}
+
+/* For Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+} 
+
+.checkboxes div input[type="checkbox"]{
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid var(--checkboxes-borderColor);
+  border-radius: 4px;
+  margin: 2px 0px 0px 0px;
+  cursor: pointer;
+  color: var(--neutral-900);
+  position: relative;
+}
+
+
+.checkboxes div input[type="checkbox"]:checked{
+  border: none;
+  background-color: var(--blue-400);
+  background-image: url("../../check_black.svg");
+  background-repeat: no-repeat;
+  background-position:  center;
+}
+
+
+.checkboxes div input[type="checkbox"]:focus{
+
+  border: 0.5px solid var(--neutral-200);
+  outline: 1px solid var(--neutral-0);
+  box-shadow: 0 0 0 2px var(--blue-400);
+}
+
+/* Counters */
+
+.counters{
+  display: flex;
+  gap: 1rem;
+  margin-block: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.statcard{
+  flex-grow: 1;
+
+  min-width: 320px;
+  height: 150px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--blue-400);
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.statcard h1, .statcard p{
+  margin: 0;
+}
+
+
+/* Charts */
+
+
+
+.charts h1{
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+.chart-elements{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart{
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart p{
+  margin: 0;
+}
+
+.chart p:first-of-type{
+  width: 16px;
+}
+
+.chart p:last-of-type{
+  width: 90px;
+}
+
+
+.chart-bar{
+  flex-grow: 1;
+  height: 21px;
+  margin: 0 14px;
+  margin-bottom: 4px;
+  border-radius: 1000px;
+  background-color: var(--chart-color);
+}
+
+.chart-bar-overlap{
+  height: 100%;
+  border-radius: 1000px;
+  background-color: var(--blue-400);
+}
+
+.seeMore-button{
+  cursor: pointer;
 }
