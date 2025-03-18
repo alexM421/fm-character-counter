@@ -210,13 +210,23 @@ textarea::placeholder{
 
 }
 
+@media  screen and (max-width: 720px) {
+  .textarea-under{
+    flex-direction: column;
+    gap: 4px;
+  }
+  .checkboxes{
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
 .textarea-under p{
   margin: 0;
 }
 
 .checkboxes{
   display: flex;
-  align-items: center;
   column-gap: 1.6rem; 
 }
 
@@ -329,7 +339,7 @@ input[type="number"] {
 }
 
 .chart{
-  transition: all 0.5s ease;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
