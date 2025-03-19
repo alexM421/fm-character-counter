@@ -120,6 +120,13 @@ main{
     padding-right: 0.5rem;
 }
 
+@media screen and (max-width: 400px) {
+    main{
+      width: 100%;
+      min-width: 0px;
+    }
+}
+
 /* Navbar */
 
 nav{
@@ -311,7 +318,6 @@ input[type="number"] {
 
 .statcard{
   flex-grow: 1;
-
   min-width: 320px;
   height: 150px;
   border-radius: 12px;
@@ -322,6 +328,14 @@ input[type="number"] {
   justify-content: center;
   padding-left: 1rem;
 }
+
+
+@media  screen and (max-width: 400px) {
+  .statcard{
+    min-width: 240px;
+  }
+}
+
 
 .statcard h1, .statcard p{
   margin: 0;
